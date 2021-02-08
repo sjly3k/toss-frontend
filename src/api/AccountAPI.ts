@@ -7,3 +7,11 @@ const client = axios.create({
 export const getAccountsAPI = async (userId : number) => {
 	return await client.get(`/account/list?user_id=${userId}`)
 }
+
+export const putAccountAPI = async (account : object) => {
+	return await client.put(`/account`, account)
+}
+
+export const deleteAccountAPI = async (accountNum : number) => {
+	return await client.delete(`/account?account_id=${accountNum}`)
+}
